@@ -35,7 +35,8 @@ namespace NgApp_API.Models
                         return false;
                 }
             }
-            return true;
+            return true; 
+            
         }
 
         public async Task<User> Register(User user, string password)
