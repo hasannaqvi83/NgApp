@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { ValueComponent } from './value/value.component';
 import { HttpClientModule } from '@angular/common/http';
 
+import { ApiConnectionService } from './Services/api-connection.service';
 @NgModule({
    declarations: [
       AppComponent,
@@ -14,7 +15,9 @@ import { HttpClientModule } from '@angular/common/http';
       BrowserModule,
       HttpClientModule
    ],
-   providers: [],
+   providers: [
+     ApiConnectionService
+   ],
    bootstrap: [
       AppComponent
    ]
