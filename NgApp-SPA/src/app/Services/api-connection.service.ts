@@ -13,7 +13,7 @@ export class ApiConnectionService {
   constructor(private http: HttpClient) { }
 
   retrieveData(): Observable<any> {
-   return this.http.get('https://localhost:44343/api/values');
+   return this.http.get('http://localhost:5000/api/values');
   }
 
 }

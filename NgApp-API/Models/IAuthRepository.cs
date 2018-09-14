@@ -4,8 +4,8 @@ namespace NgApp_API.Models
 {
     public interface IAuthRepository
     {
-        Task<User> Register(User user, string password);
-        Task<User> Login(string username, string password);
-        Task<bool> UserExists(string username);
+        Task<User> RegisterAsync(User user, string password);
+        Task<User> LoginAsync(string username, string password);
+        Task<bool> UserExistsAsync(string username);
     }
 }

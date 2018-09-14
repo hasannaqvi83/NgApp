@@ -5,9 +5,11 @@ using System.Threading.Tasks;
 using NgApp_API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace NgApp_API.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
@@ -28,10 +30,11 @@ namespace NgApp_API.Controllers
         }
 
         // GET api/values/5
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetValue(int id)
         {
-            var value = await _ctx.Values.FirstOrDefaultAsync(x => x.Id == 2);
+            var value = await _ctx.Values.FirstOrDefaultAsync(x => x.Id == id);
             return Ok(value);
         }
 

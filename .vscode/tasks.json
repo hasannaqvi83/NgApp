@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/API-Test/API-Test.csproj"
+                "${workspaceFolder}\\NgApp_API\\NgApp_API.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

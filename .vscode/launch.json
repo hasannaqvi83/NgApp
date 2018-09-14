@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/API-Test/bin/Debug/netcoreapp2.1/API-Test.dll",
+            "program": "${workspaceFolder}/NgApp_with_ASP.Net_Core/NgApp-API/bin/Debug/netcoreapp2.1/NgApp_API.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/API-Test",
+            "cwd": "${workspaceFolder}/NgApp_with_ASP.Net_Core/NgApp-API",
             "stopAtEntry": false,
             "internalConsoleOptions": "openOnSessionStart",
             "launchBrowser": {

@@ -1,4 +1,3 @@
-using System;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,7 +10,8 @@ namespace NgApp_API.Models
         {
             this._ctx = ctx;
         }
-        public async Task<User> Login(string username, string password)
+
+        public async Task<User> LoginAsync(string username, string password)
         {
             var user = await _ctx.Users.FirstOrDefaultAsync(x => x.Username == username);
 
@@ -20,10 +20,12 @@ namespace NgApp_API.Models
 
             if (!VerifyPasswordHash(password, user.PasswordHash, user.PasswordSalt))
                 return null;
-
             return user;
         }
 
+        //Compares the password hash of the user provided password and the hash stored in 
+        //databse. This method compares each bytes with the two hashes and returns false
+        //in-case a mismatch of bytes is found.
         private bool VerifyPasswordHash(string password, byte[] passwordHash, byte[] passwordSalt)
         {
             using (var hmac = new System.Security.Cryptography.HMACSHA512(passwordSalt))
@@ -35,11 +37,10 @@ namespace NgApp_API.Models
                         return false;
                 }
             }
-            return true; 
-            
+            return true;
         }
 
-        public async Task<User> Register(User user, string password)
+        public async Task<User> RegisterAsync(User user, string password)
         {
             byte[] passwordHash, passwordSalt;
             CreatePasswordHash(password, out passwordHash, out passwordSalt);
@@ -52,6 +53,7 @@ namespace NgApp_API.Models
             return user;
         }
 
+        //Creates a random salt and computes a hash based on the provided password. 
         private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
             using (var hmac = new System.Security.Cryptography.HMACSHA512())
@@ -61,12 +63,9 @@ namespace NgApp_API.Models
             }
         }
 
-        public async Task<bool> UserExists(string username)
+        public async Task<bool> UserExistsAsync(string username)
         {
-            if (await _ctx.Users.AnyAsync(x => x.Username == username))
-                return true;
-
-            return false;
+            return (await _ctx.Users.AnyAsync(x => x.Username == username));
         }
     }
 }
