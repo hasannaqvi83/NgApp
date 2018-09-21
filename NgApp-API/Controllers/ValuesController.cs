@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace NgApp_API.Controllers
 {
-    [Authorize]
+   // [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
