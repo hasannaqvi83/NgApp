@@ -12,20 +12,22 @@ interface UserInfo {
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-  model: UserInfo = { username : '', password : '' };
+  model: UserInfo = { username: '', password: '' };
   test: any;
 
-  constructor(private authservice: AuthService) { }
+  constructor(private authservice: AuthService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   login() {
-    this.authservice.login(this.model).subscribe(next => {
-      console.log('Logged in successfully');
-    }, error => {
-      console.log('Failed to login');
-    });
+    this.authservice.login(this.model).subscribe(
+      next => {
+        console.log('Logged in successfully');
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
   loggedIn() {

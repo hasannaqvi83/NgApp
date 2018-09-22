@@ -72,6 +72,7 @@ namespace NgApp_API.Controllers
             {
                 token = tokenHandler.WriteToken(token)
             });
+
         }
     }
 }

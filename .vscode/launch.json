@@ -1,9 +1,32 @@
 {
-   // Use IntelliSense to find out which attributes exist for C# debugging
-   // Use hover for the description of the existing attributes
-   // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
-   "version": "0.2.0",
-   "configurations": [
+    // Use IntelliSense to find out which attributes exist for C# debugging
+    // Use hover for the description of the existing attributes
+    // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
+    "version": "0.2.0",
+    "configurations": [{
+            "name": "Launch Angular Client",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:4200",
+            "runtimeArgs": [
+                "--user-data-dir",
+                "--remote-debugging-port=9222"
+            ],
+            "sourceMaps": true,
+            "trace": true,
+            "webRoot": "${workspaceRoot}/NgApp-SPA/",
+            "userDataDir": "${workspaceRoot}/.vscode/chrome"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Express Server",
+            "program": "${workspaceRoot}/server/bin/www",
+            "outFiles": [
+                "${workspaceRoot}/out/**/*.js"
+            ]
+        },
+
         {
             "name": ".NET Core Launch (web)",
             "type": "coreclr",
@@ -41,6 +64,6 @@
             "type": "coreclr",
             "request": "attach",
             "processId": "${command:pickProcess}"
-        }
-    ,]
+        },
+    ]
 }
