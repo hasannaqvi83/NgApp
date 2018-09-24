@@ -8,14 +8,13 @@ import { TitleCasePipe } from '@angular/common';
   providedIn: 'root'
 })
 export class AuthService {
-  baseUrl = 'http://localhost:5000/api/auth/';
   jwtHelper = new JwtHelperService();
   decodedToken: any;
 
   constructor(private http: HttpClient, private titleCasePipe: TitleCasePipe) {}
 
   login(model: any) {
-    return this.http.post(this.baseUrl + 'login', model).pipe(
+    return this.http.post('auth/login', model).pipe(
       map((response: any) => {
         const user = response;
         if (user) {
@@ -43,6 +42,6 @@ export class AuthService {
   }
 
   register(model: any) {
-    return this.http.post(this.baseUrl + 'register', model);
+    return this.http.post('auth/register', model);
   }
 }

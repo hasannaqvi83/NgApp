@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="row">
+    <div *ngFor="let service of services" class="col-lg-2 col-md-3 col-sm-6">
+      <app-service-card [service]="service"></app-service-card>
+    </div>
+  </div>
+</div>
