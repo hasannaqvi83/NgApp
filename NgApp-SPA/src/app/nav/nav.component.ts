@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { AlertifyService } from '../_services/alertify.service';
 import { AuthService } from '../_services/auth.service';
 import { Router } from '@angular/router';
-
 interface UserInfo {
   username: string;
   password: string;

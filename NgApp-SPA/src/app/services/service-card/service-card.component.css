@@ -1,0 +1,14 @@
+.card-img-top {
+  max-height: 200px;
+  min-height: 195px
+}
+
+.card, .card-img-top {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.card {
+  min-height: 320px;
+  cursor: pointer;
+}

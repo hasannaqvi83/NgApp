@@ -23,34 +23,41 @@ import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 
+// import { NbThemeModule } from '@nebular/theme';
+// import { NbFlipCardComponent } from '@nebular/theme/components/card/flip-card/flip-card.component';
+// import { NbCardComponent, NbCardBodyComponent } from '@nebular/theme/components/card/card.component';
+
+// import { NbCardFrontComponent, NbCardBackComponent } from '@nebular/theme/components/card/shared/shared.component';
+
 @NgModule({
-   declarations: [
-      AppComponent,
-      NavComponent,
-      HomeComponent,
-      RegisterComponent,
-      ProfileComponent,
-      ServiceCardComponent,
-      ServicesListComponent
-   ],
-   imports: [
-      BrowserModule,
-      HttpClientModule,
-      FormsModule,
-      FontAwesomeModule,
-      BsDropdownModule.forRoot(),
-      RouterModule.forRoot(appRoutes)
-   ],
-   providers: [
-      AuthService,
-      ErrorInterceptorProvider,
-      ApiUrlInterceptorProvider,
-      AlertifyService,
-      TitleCasePipe,
-      AuthGuard
-   ],
-   bootstrap: [
-      AppComponent
-   ]
+  declarations: [
+    AppComponent,
+    NavComponent,
+    HomeComponent,
+    RegisterComponent,
+    ProfileComponent,
+    ServiceCardComponent,
+    ServicesListComponent
+
+    // NbFlipCardComponent, NbCardFrontComponent, NbCardBackComponent, NbCardComponent, NbCardBodyComponent
+  ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    FormsModule,
+    FontAwesomeModule,
+    // NbThemeModule.forRoot({ name: 'default' }),
+    BsDropdownModule.forRoot(),
+    RouterModule.forRoot(appRoutes)
+  ],
+  providers: [
+    AuthService,
+    ErrorInterceptorProvider,
+    ApiUrlInterceptorProvider,
+    AlertifyService,
+    TitleCasePipe,
+    AuthGuard
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

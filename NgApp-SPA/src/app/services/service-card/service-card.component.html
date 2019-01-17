@@ -1,10 +1,23 @@
-<div class="card mb-4">
-  <div class="card-img-wrapper">
-    <img class="card-img-top" src="{{service.photoUrl}}" />
+<!-- Card -->
+<div class="card">
+  <!-- Card image -->
+  <div class="view overlay" style="min-height: 200px; vertical-align: middle;">
+    <img class="card-img-top img-response" src="{{service.image}}" alt="Card image cap">
+    <!-- <a>
+        <div class="mask rgba-white-slight">test</div>
+      </a> -->
   </div>
-  <div class="card-body p1">
-    <h6 class="card-title text-center mb-1"><i class="fas fa-{{service.photoUrl}}"></i>
-    </h6>
-    <p class="card-text text-muted text-center">{{service.title}}</p>
+
+  <!-- Card content -->
+  <div class="card-body">
+
+    <!-- Title -->
+    <h5 class="card-title">{{service.title}}</h5>
+    <!-- <hr> -->
+    <!-- Text -->
+    <p class="card-text">{{service.text}}</p>
+    <!-- <button class="btn btn-indigo btn-rounded btn-md">Read more</button> -->
+
   </div>
 </div>
+<!-- Card -->
